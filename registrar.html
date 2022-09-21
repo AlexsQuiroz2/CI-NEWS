@@ -63,10 +63,16 @@
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">Titulo Noticia</label>
                               <input type="text" class="form-control" required id="title">
+                              <div class="container bg-danger" id="message-Error-Title" style="display: none;">
+                                    <p class="text-white">Este campo no puede estar vacio</p>
+                              </div>
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputPassword1" class="form-label">Contenido</label>
                                 <textarea name="" cols="20" rows="20" class="form-control" required id="content"></textarea>
+                                <div class="container bg-danger" id="message-Error-Content" style="display: none;">
+                                    <p class="text-white">Este campo no puede estar vacio</p>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label>Estado</label>
@@ -76,9 +82,12 @@
                                     <option class="text-center" value="2">Inactivo</option>
                                 </select>
                             </div>
+                            <div class="container bg-danger" id="message-Error-Status" style="display: none;">
+                                <p class="text-white">Este campo no puede estar vacio</p>
+                          </div>
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Subir</button>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary" id="boton" onclick="Savedata()">Subir</button>
 
                     </div>
                 </div>
@@ -86,6 +95,38 @@
             <div class="col-2"></div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+        </button>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
 </body>
 </html>
 
@@ -101,9 +142,25 @@ var estado
         titulo=$('#title').val();
         contenido=$('#content').val();
         estado=$('#status').val();
-        console.log(titulo)
-        console.log(contenido)
-        console.log(estado)
+
+        if(titulo == undefined || titulo == null || titulo == ''){
+            $('#message-Error-Title').show();
+        }else{
+            $('#message-Error-Title').hide();
+        }
+
+        if(contenido == undefined || contenido == null || contenido == ''){
+            $('#message-Error-Content').show();
+        }else{
+            $('#message-Error-Content').hide();
+        }
+
+        if(estado == undefined || estado == null || estado == 0){
+            $('#message-Error-Status').show();
+        }else{
+            $('#message-Error-Status').hide();
+        }
+
 
     }
 

@@ -6,3 +6,7 @@
 .form_control textarea{
     resize: none;
 }
+
+#boton {
+    width: 40%;
+}
