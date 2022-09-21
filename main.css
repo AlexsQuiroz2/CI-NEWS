@@ -2,3 +2,7 @@
     width: 500px;
     height: 400px;
 }
+
+.form_control textarea{
+    resize: none;
+}

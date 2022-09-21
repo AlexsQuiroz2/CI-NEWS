@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../CI-NEWS/main.css">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
@@ -57,27 +57,30 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="text-danger text-center">Formulario news</h2>
+                        <h2 class="text-danger text-center text-dark">Formulario news</h2>
                     </div>
                     <div class="card-body">
-                        <form>
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">Email address</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                              <label for="exampleInputEmail1" class="form-label">Titulo Noticia</label>
+                              <input type="text" class="form-control" required id="title">
                             </div>
                             <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">Password</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1">
+                              <label for="exampleInputPassword1" class="form-label">Contenido</label>
+                                <textarea name="" cols="20" rows="20" class="form-control" required id="content"></textarea>
                             </div>
-                            <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <div class="mb-3">
+                                <label>Estado</label>
+                                <select name="" class="form-control" required id="status">
+                                    <option class="text-center" value="0">--SELECCIONE--</option>
+                                    <option class="text-center" value="1">Activo</option>
+                                    <option class="text-center" value="2">Inactivo</option>
+                                </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
                     </div>
-                    <div class="card-footer"></div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Subir</button>
+
+                    </div>
                 </div>
             </div>
             <div class="col-2"></div>
@@ -85,3 +88,24 @@
       </div>
 </body>
 </html>
+
+<script type="text/javascript">
+//variables que continenen la informacion de los formularios
+var titulo
+var contenido
+var estado
+    
+    
+    function Savedata(){
+        //metodo jquery
+        titulo=$('#title').val();
+        contenido=$('#content').val();
+        estado=$('#status').val();
+        console.log(titulo)
+        console.log(contenido)
+        console.log(estado)
+
+    }
+
+
+</script>
