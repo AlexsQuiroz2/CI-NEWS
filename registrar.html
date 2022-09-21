@@ -105,7 +105,7 @@
 
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" id="button1" style="visibility: hidden;" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
         </button>
     
@@ -114,11 +114,18 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title text-center" id="exampleModalLabel">Guardado con Exito</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                ...
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <img src="../CI-NEWS/img/chulo.png">
+                        </div>
+                        <div class="col-12 text-center">
+                            <h3>DATOS CAPTURADOS</h3>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -145,21 +152,29 @@ var estado
 
         if(titulo == undefined || titulo == null || titulo == ''){
             $('#message-Error-Title').show();
+            return false;
         }else{
             $('#message-Error-Title').hide();
         }
 
         if(contenido == undefined || contenido == null || contenido == ''){
             $('#message-Error-Content').show();
+            return false;
         }else{
             $('#message-Error-Content').hide();
         }
 
         if(estado == undefined || estado == null || estado == 0){
             $('#message-Error-Status').show();
+            return false;
         }else{
             $('#message-Error-Status').hide();
+
         }
+
+
+
+        $('#button1').click();
 
 
     }
